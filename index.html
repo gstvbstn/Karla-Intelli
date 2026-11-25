@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Die neue Kollegin KI · Werkzeuge zum Vortrag</title>
+<meta name="description" content="Zeitfresser erfassen, KI-Kosten abschätzen und die Inhalte des Vortrags „Die neue Kollegin KI“ nachlesen.">
+<style>
+:root {
+  /* Layout: eine Seite mit fester Navigation; Abschnitte als ruhige Karten, auf dem Handy einspaltig */
+  --ink: #1F2D3D;
+  --body: #4A5568;
+  --muted: #5B6B7E;
+  --bg: #F6F7F9;
+  --bg2: #E9EEF4;
+  --card: #FFFFFF;
+  --blue: #4A6FA5;
+  --deep: #3E5F8A;
+  --tint: #DCE6F2;
+  --line: #D5DDE7;
+  --green: #5E8C6A;
+  --green-bg: #E3F0E6;
+  --yellow: #C99A2E;
+  --red: #B5544C;
+  --red-bg: #F6E2DF;
+  --sand: #EDE6DA;
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--bg); color: var(--body); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0; text-wrap: balance; }
+h2 { font-size: 30px; letter-spacing: -.01em; }
+h3 { font-size: 20px; }
+p { margin: 0; }
+a { color: var(--deep); }
+button, input, select, textarea { font: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.lead { font-size: 18px; max-width: 62ch; margin-top: 10px; }
+.small { font-size: 14px; color: var(--muted); }
+.card { background: var(--card); border-radius: 18px; padding: 22px; box-shadow: 0 1px 0 rgba(31,45,61,.04), 0 10px 30px -22px rgba(31,45,61,.35); }
+.card.tint { background: var(--tint); box-shadow: none; }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, 1fr); }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 760px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } h2 { font-size: 25px; } }
+.pill { display: inline-block; font-size: 13px; font-weight: 600; padding: 3px 11px; border-radius: 999px; background: var(--tint); color: var(--deep); }
+.pill.ki { background: var(--blue); color: #fff; }
+.pill.mensch { background: var(--sand); color: #5A4A32; }
+.pill.warn { background: var(--sand); color: #5A4A32; }
+.btn { text-decoration: none; display: inline-block; border: 1.5px solid var(--line); background: var(--card); color: var(--ink); font-weight: 600; font-size: 15px; padding: 9px 16px; border-radius: 999px; cursor: pointer; transition: border-color .2s, background .2s; }
+.btn:hover { border-color: var(--blue); }
+.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn.primary:hover { background: var(--deep); }
+.btn.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+ul.list { margin: 6px 0 0; padding-left: 20px; }
+ul.list li { margin-bottom: 4px; }
+ul.list li::marker { color: var(--blue); }
+
+/* Kopf */
+header.top { position: sticky; top: 0; z-index: 10; background: rgba(246,247,249,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 16px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand .av { width: 34px; height: 34px; border-radius: 50%; overflow: hidden; flex: none; }
+.brand .av svg { width: 34px; height: 34px; display: block; }
+nav.tabs { display: flex; gap: 4px; overflow-x: auto; margin-left: auto; scrollbar-width: none; }
+nav.tabs::-webkit-scrollbar { display: none; }
+nav.tabs a { text-decoration: none; color: var(--body); font-weight: 600; font-size: 15px; padding: 7px 12px; border-radius: 999px; white-space: nowrap; }
+nav.tabs a:hover { background: var(--tint); color: var(--ink); }
+@media (max-width: 640px) { .brand span:not(.av) { display: none; } }
+.hero { padding-top: 40px; padding-bottom: 28px; }
+.hero-in { display: grid; grid-template-columns: 1fr 160px; gap: 28px; align-items: center; }
+.hero h1 { font-size: 40px; letter-spacing: -.02em; }
+.hero .av { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 8px var(--card), 0 0 0 11px var(--tint); }
+.hero .av svg { width: 150px; height: 150px; display: block; }
+.quick { margin-top: 20px; }
+@media (max-width: 640px) { .hero-in { grid-template-columns: 1fr; } .hero .av { width: 96px; height: 96px; order: -1; } .hero .av svg { width: 96px; height: 96px; } .hero h1 { font-size: 30px; } }
+section.block { padding: 36px 0; }
+section.block.alt { background: var(--bg2); }
+.head { margin-bottom: 22px; }
+
+/* Zeitfresser */
+.form { display: grid; gap: 14px; align-content: start; }
+.field label, .q-label { display: block; font-weight: 600; color: var(--ink); font-size: 15px; margin-bottom: 5px; }
+input[type=text], input[type=email], input[type=number], select, textarea { width: 100%; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; background: #fff; color: var(--ink); }
+input:focus, select:focus, textarea:focus { border-color: var(--blue); outline: none; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+@media (max-width: 520px) { .row2 { grid-template-columns: 1fr 1fr; } .row2 .field:first-child { grid-column: 1 / -1; } }
+.yn { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
+.yn .seg { display: flex; gap: 6px; flex: none; }
+.yn .seg .btn { padding: 6px 14px; }
+.yn.off { opacity: .4; }
+.reco { border-radius: 14px; padding: 14px 16px; background: var(--tint); }
+.reco b { color: var(--ink); }
+.tf-list { display: grid; gap: 10px; }
+.tf { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; align-items: start; background: var(--card); border-radius: 14px; padding: 14px 16px; border-left: 5px solid var(--blue); }
+.tf.c-digital { border-left-color: var(--yellow); }
+.tf.c-auto { border-left-color: var(--green); }
+.tf.c-lokal { border-left-color: var(--red); }
+.tf.c-mittel { border-left-color: var(--deep); }
+.tf h3 { font-size: 17px; }
+.tf .del { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 14px; text-decoration: underline; }
+.sum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+.sum div { background: var(--card); border-radius: 14px; padding: 12px 14px; }
+.sum b { display: block; font-size: 24px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.empty { border: 1.5px dashed #9FB3CC; border-radius: 14px; padding: 18px; text-align: center; color: var(--muted); }
+
+/* Kosten */
+.scen { display: grid; gap: 8px; }
+.sc { text-align: left; border: 1.5px solid var(--line); background: var(--card); border-radius: 14px; padding: 10px 14px; cursor: pointer; }
+.sc b { display: block; color: var(--ink); font-size: 16px; }
+.sc span { font-size: 13px; color: var(--muted); }
+.sc.on { background: var(--blue); border-color: var(--blue); }
+.sc.on b, .sc.on span { color: #fff; }
+.slider label { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 2px; }
+.slider label b { color: var(--ink); font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; accent-color: var(--blue); }
+.bars { display: grid; gap: 14px; margin-top: 14px; }
+.bar-row { display: grid; grid-template-columns: 170px 1fr 92px; gap: 12px; align-items: center; }
+.bar-row .nm { font-weight: 700; color: var(--ink); line-height: 1.2; }
+.bar-row .nm span { display: block; font-size: 13px; font-weight: 500; color: var(--muted); }
+.track { height: 26px; background: var(--tint); border-radius: 8px; overflow: hidden; }
+.fill { height: 100%; width: 0; min-width: 4px; background: var(--blue); border-radius: 8px; transition: width .7s cubic-bezier(.2,.7,.2,1); }
+.fill.big { background: var(--deep); }
+.val { text-align: right; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .bar-row { grid-template-columns: 1fr 86px; } .bar-row .track { grid-column: 1 / -1; grid-row: 2; } }
+
+/* Wissen */
+.k { display: grid; gap: 16px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+.step { background: var(--card); border-radius: 16px; padding: 14px; display: grid; gap: 4px; align-content: start; }
+.step .ill { background: var(--bg); border-radius: 12px; display: grid; place-items: center; height: 96px; margin-bottom: 6px; }
+.step .ill svg { width: 140px; height: 88px; }
+.step .num { font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: .04em; }
+.topic { display: grid; gap: 14px; }
+.topic + .topic { margin-top: 30px; }
+table.pairs { width: 100%; border-collapse: collapse; font-size: 15px; }
+.pairs th { text-align: left; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); padding: 0 10px 8px 0; }
+.pairs td { padding: 10px 10px 10px 0; border-top: 1px solid var(--line); vertical-align: top; }
+.pairs td:first-child { font-weight: 700; color: var(--ink); }
+.tbl { overflow-x: auto; }
+.amp { border-top: 6px solid; }
+.amp.ag { border-top-color: var(--green); } .amp.ay { border-top-color: var(--yellow); } .amp.ar { border-top-color: var(--red); }
+.amp .where { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); font-weight: 600; color: var(--ink); }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
+.dot.g { background: var(--green); } .dot.y { background: var(--yellow); } .dot.r { background: var(--red); }
+ol.road { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+
+/* Aufgabe */
+.quiz { display: grid; gap: 14px; }
+.qz { background: var(--card); border-radius: 16px; padding: 18px; border-left: 5px solid transparent; transition: background .3s, border-color .3s; }
+.qz .opts { display: grid; gap: 8px; margin-top: 12px; }
+.qz .opt { text-align: left; border: 1.5px solid var(--line); background: #fff; border-radius: 12px; padding: 10px 14px; cursor: pointer; color: var(--ink); }
+.qz .opt:hover { border-color: var(--blue); }
+.qz.ok { background: var(--green-bg); border-left-color: var(--green); }
+.qz.no { background: var(--red-bg); border-left-color: var(--red); }
+.qz .opt.right { border-color: var(--green); background: #F1F8F2; font-weight: 600; }
+.qz .opt.wrong { border-color: var(--red); background: #FBF1EF; }
+.qz .fb { margin-top: 10px; font-size: 15px; }
+.qz.ok .fb b { color: #3F6B4A; } .qz.no .fb b { color: #9C3D35; }
+.score { font-weight: 700; color: var(--ink); }
+
+/* Kontakt */
+.contact { display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start; }
+@media (max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; }
+.check input { margin-top: 4px; }
+.msg { border-radius: 12px; padding: 12px 14px; font-size: 15px; display: none; }
+.msg.show { display: block; }
+.msg.ok { background: var(--green-bg); color: #2F5539; }
+.msg.err { background: var(--red-bg); color: #7E2F28; }
+footer { padding: 30px 0 50px; font-size: 14px; color: var(--muted); }
+footer h3 { font-size: 15px; margin-bottom: 4px; }
+footer .grid { gap: 22px; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .fill { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#start"><span class="av"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="34" height="34" role="img" aria-label="Illustration: Karla Intelli"><defs><clipPath id="kc-s"><circle cx="100" cy="100" r="100"/></clipPath></defs><g clip-path="url(#kc-s)"><rect width="34" height="34" fill="#DCE6F2"/><circle cx="160" cy="44" r="22" fill="#C9D8EC"/><path d="M50 96 C46 52 74 30 100 30 C127 30 154 52 150 96 L152 142 C140 150 126 150 118 143 L82 143 C74 150 60 150 48 142 Z" fill="#3B2F2A"/><path d="M28 200 C32 162 62 146 100 146 C138 146 168 162 172 200 Z" fill="#4A6FA5"/><path d="M82 147 L100 178 L118 147 Z" fill="#FCFDFE"/><path d="M88 120 L88 150 C94 158 106 158 112 150 L112 120 Z" fill="#E2B79A"/><ellipse cx="100" cy="97" rx="34" ry="40" fill="#F1D3BC"/><path d="M63 92 C60 60 80 44 101 45 C123 46 142 60 138 90 C123 82 112 70 107 58 C99 74 83 86 63 92 Z" fill="#3B2F2A"/><path d="M80 90 Q87 86 94 89" stroke="#3B2F2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M106 89 Q113 86 120 90" stroke="#3B2F2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="87" cy="100" r="3.8" fill="#1F2D3D"/><circle cx="113" cy="100" r="3.8" fill="#1F2D3D"/><circle cx="88.3" cy="98.6" r="1.1" fill="#FCFDFE"/><circle cx="114.3" cy="98.6" r="1.1" fill="#FCFDFE"/><circle cx="80" cy="112" r="6.5" fill="#E89A8E" fill-opacity="0.35"/><circle cx="120" cy="112" r="6.5" fill="#E89A8E" fill-opacity="0.35"/><path d="M90 117 Q100 126 110 117" stroke="#9C4F45" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M142 168 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#F6F7F9"/></g></svg></span><span>Die neue Kollegin KI</span></a>
+    <nav class="tabs" aria-label="Bereiche">
+      <a href="#zeitfresser">Zeitfresser</a>
+      <a href="#kosten">Kosten</a>
+      <a href="#wissen">Wissen</a>
+      <a href="#aufgabe">Aufgabe</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+  <div class="wrap hero">
+    <div class="hero-in">
+      <div>
+        <p class="eyebrow">Zum Vortrag im Business-Netzwerk Wilsdruff · 25. November 2026</p>
+        <h1>Die neue Kollegin KI: Ihre Werkzeuge zum Mitnehmen</h1>
+        <p class="lead">Erfassen Sie Ihre Zeitfresser, schätzen Sie ab, was KI für eine Aufgabe kostet, und lesen Sie die Inhalte des Vortrags in Ruhe nach. Ihre Eingaben bleiben in Ihrem Browser.</p>
+        <div class="btns quick">
+          <a class="btn primary" href="#zeitfresser">Zeitfresser erfassen</a>
+          <a class="btn" href="#kosten">Kosten abschätzen</a>
+          <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+        </div>
+      </div>
+      <div class="av" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="150" height="150" role="img" aria-label="Illustration: Karla Intelli"><defs><clipPath id="kc-l"><circle cx="100" cy="100" r="100"/></clipPath></defs><g clip-path="url(#kc-l)"><rect width="150" height="150" fill="#DCE6F2"/><circle cx="160" cy="44" r="22" fill="#C9D8EC"/><path d="M50 96 C46 52 74 30 100 30 C127 30 154 52 150 96 L152 142 C140 150 126 150 118 143 L82 143 C74 150 60 150 48 142 Z" fill="#3B2F2A"/><path d="M28 200 C32 162 62 146 100 146 C138 146 168 162 172 200 Z" fill="#4A6FA5"/><path d="M82 147 L100 178 L118 147 Z" fill="#FCFDFE"/><path d="M88 120 L88 150 C94 158 106 158 112 150 L112 120 Z" fill="#E2B79A"/><ellipse cx="100" cy="97" rx="34" ry="40" fill="#F1D3BC"/><path d="M63 92 C60 60 80 44 101 45 C123 46 142 60 138 90 C123 82 112 70 107 58 C99 74 83 86 63 92 Z" fill="#3B2F2A"/><path d="M80 90 Q87 86 94 89" stroke="#3B2F2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M106 89 Q113 86 120 90" stroke="#3B2F2A" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="87" cy="100" r="3.8" fill="#1F2D3D"/><circle cx="113" cy="100" r="3.8" fill="#1F2D3D"/><circle cx="88.3" cy="98.6" r="1.1" fill="#FCFDFE"/><circle cx="114.3" cy="98.6" r="1.1" fill="#FCFDFE"/><circle cx="80" cy="112" r="6.5" fill="#E89A8E" fill-opacity="0.35"/><circle cx="120" cy="112" r="6.5" fill="#E89A8E" fill-opacity="0.35"/><path d="M90 117 Q100 126 110 117" stroke="#9C4F45" stroke-width="2.8" fill="none" stroke-linecap="round"/><path d="M142 168 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#F6F7F9"/></g></svg></div>
+    </div>
+  </div>
+
+  <!-- Zeitfresser -->
+  <section class="block alt" id="zeitfresser">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Werkzeug 1</p>
+        <h2>Zeitfresser erfassen und einordnen</h2>
+        <p class="lead">Notieren Sie Aufgaben, die regelmäßig Zeit kosten. Mit den vier Fragen aus dem Vortrag sehen Sie sofort, ob digitalisiert, automatisiert oder KI eingesetzt werden sollte.</p>
+      </div>
+      <div class="grid g2">
+        <form class="card form" id="tfForm" autocomplete="off">
+          <div class="field"><label for="tfName">Aufgabe</label><input type="text" id="tfName" placeholder="z. B. Lieferscheine abtippen" required maxlength="120"></div>
+          <div class="row2">
+            <div class="field"><label for="tfFreq">Wie oft</label><input type="number" id="tfFreq" min="1" max="1000" value="5" required></div>
+            <div class="field"><label for="tfPer">pro</label><select id="tfPer"><option value="day">Tag</option><option value="week" selected>Woche</option><option value="month">Monat</option></select></div>
+            <div class="field"><label for="tfMin">Minuten je Mal</label><input type="number" id="tfMin" min="1" max="600" value="15" required></div>
+          </div>
+          <div>
+            <div class="yn" data-q="0"><span class="q-label">1 · Liegt es digital vor?</span><div class="seg"><button type="button" class="btn" data-v="1">Ja</button><button type="button" class="btn" data-v="0">Nein</button></div></div>
+            <div class="yn" data-q="1"><span class="q-label">2 · Läuft es nach fester Regel?</span><div class="seg"><button type="button" class="btn" data-v="1">Ja</button><button type="button" class="btn" data-v="0">Nein</button></div></div>
+            <div class="yn" data-q="2"><span class="q-label">3 · Dürfen die Daten in die Cloud?</span><div class="seg"><button type="button" class="btn" data-v="1">Ja</button><button type="button" class="btn" data-v="0">Nein</button></div></div>
+            <div class="yn" data-q="3"><span class="q-label">4 · Routine in großer Menge?</span><div class="seg"><button type="button" class="btn" data-v="1">Ja</button><button type="button" class="btn" data-v="0">Nein</button></div></div>
+          </div>
+          <div class="reco" id="tfReco"></div>
+          <div class="btns"><button class="btn primary" type="submit">Zur Liste hinzufügen</button></div>
+        </form>
+        <div>
+          <div class="sum" id="tfSum"></div>
+          <div class="tf-list" id="tfList"></div>
+          <div class="btns" style="margin-top:14px">
+            <button class="btn" type="button" id="tfCopy">Liste kopieren</button>
+            <button class="btn" type="button" id="tfCsv">Als CSV herunterladen</button>
+            <button class="btn" type="button" id="tfSend">Liste an Gustav schicken</button>
+            <button class="btn" type="button" id="tfClear">Liste leeren</button>
+          </div>
+          <p class="small" id="tfNote" style="margin-top:8px">Die Liste wird nur in diesem Browser gespeichert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kosten -->
+  <section class="block" id="kosten">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Werkzeug 2</p>
+        <h2>Was kostet eine Aufgabe im Monat?</h2>
+        <p class="lead">KI wird nach gelesenen und geschriebenen Textstücken (Tokens) abgerechnet, wie ein Stundenzettel. Wählen Sie ein Szenario oder stellen Sie eigene Werte ein.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card">
+          <div class="scen" role="group" aria-label="Szenario wählen">
+            <button class="sc on" type="button" data-preset="mail"><b>E-Mails vorsortieren</b><span>2.000 Mails im Monat</span></button>
+            <button class="sc" type="button" data-preset="invoice"><b>Rechnungen auslesen</b><span>1.500 Rechnungen im Monat</span></button>
+            <button class="sc" type="button" data-preset="minutes"><b>Protokolle zusammenfassen</b><span>40 Besprechungen à 1 Stunde</span></button>
+            <button class="sc" type="button" data-preset="service"><b>Kundenanfragen beantworten</b><span>3.000 Anfragen mit Wissensbasis</span></button>
+            <button class="sc" type="button" data-preset="offer"><b>Angebote entwerfen</b><span>200 Angebote aus Unterlagen</span></button>
+            <button class="sc" type="button" data-preset="agent"><b>KI-Agent arbeitet selbstständig</b><span>100 Aufgaben à 50 Schritte</span></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 id="scTitle"></h3>
+          <p class="small" id="scNote" style="margin-top:4px"></p>
+          <div class="slider" style="margin-top:14px"><label for="cN">Vorgänge pro Monat <b id="vN"></b></label><input type="range" id="cN" min="0" max="1000"></div>
+          <div class="slider"><label for="cI">Tokens rein je Vorgang <b id="vI"></b></label><input type="range" id="cI" min="0" max="1000"></div>
+          <div class="slider"><label for="cO">Tokens raus je Vorgang <b id="vO"></b></label><input type="range" id="cO" min="0" max="1000"></div>
+          <div class="bars" id="bars"></div>
+          <p style="margin-top:14px" id="total"></p>
+          <p class="small" style="margin-top:10px"><b>Sparen:</b> erst automatisieren · das einfache Modell sortiert vor · nur nötige Unterlagen mitgeben · nicht Eiliges gesammelt verarbeiten</p>
+          <p class="small" style="margin-top:6px">Listenpreise bei OpenRouter, Stand 23.11.2026, umgerechnet mit 1 € ≈ 1,15 $. Vereinfachte Schätzung ohne Caching und Staffelpreise. 1 Mio. Tokens sind grob 700.000 englische Wörter, auf Deutsch etwas weniger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wissen -->
+  <section class="block alt" id="wissen">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Zum Nachlesen</p>
+        <h2>Die Inhalte des Vortrags</h2>
+        <p class="lead">KI ist wie eine neue Mitarbeiterin: Sie braucht einen Schreibtisch, eine passende Aufgabe, den richtigen Platz im Team und klare Spielregeln.</p>
+      </div>
+
+      <div class="topic">
+        <h3>Karlas erste Arbeitswoche: vier Stufen</h3>
+        <div class="steps">
+          <div class="step"><div class="ill"><svg viewBox="0 0 160 100" width="150" height="94" aria-hidden="true"><ellipse cx="80" cy="93" rx="66" ry="5" fill="#DCE6F2"/><rect x="24" y="68" width="6" height="24" fill="#3E5F8A"/><rect x="130" y="68" width="6" height="24" fill="#3E5F8A"/><rect x="14" y="62" width="132" height="8" rx="3" fill="#3E5F8A"/><rect x="56" y="20" width="52" height="34" rx="4" fill="#FCFDFE" stroke="#3E5F8A" stroke-width="3"/><rect x="62" y="27" width="24" height="4" rx="2" fill="#4A6FA5"/><rect x="62" y="35" width="36" height="4" rx="2" fill="#9FB3CC"/><rect x="62" y="43" width="30" height="4" rx="2" fill="#9FB3CC"/><rect x="77" y="54" width="10" height="8" fill="#3E5F8A"/><rect x="24" y="33" width="18" height="6" rx="2" fill="#DCE6F2" stroke="#9FB3CC" stroke-width="1.5"/><rect x="22" y="39" width="22" height="8" rx="2" fill="#9FB3CC"/><rect x="20" y="46" width="26" height="16" rx="2" fill="#4A6FA5"/><path d="M125 50 C121 42 129 38 125 28" stroke="#5E8C6A" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="130" cy="34" rx="6" ry="3.5" fill="#5E8C6A"/><ellipse cx="120" cy="41" rx="5" ry="3" fill="#5E8C6A"/><rect x="117" y="48" width="16" height="14" rx="3" fill="#FCFDFE" stroke="#3E5F8A" stroke-width="2.5"/></svg></div><span class="num">1 · DIGITALISIEREN</span><b>Einen Schreibtisch</b><span class="small">Ihre Daten digital und auffindbar</span></div>
+          <div class="step"><div class="ill"><svg viewBox="0 0 160 100" width="150" height="94" aria-hidden="true"><ellipse cx="78" cy="93" rx="64" ry="5" fill="#DCE6F2"/><path d="M8 54 h12 M4 64 h16 M8 74 h12" stroke="#9FB3CC" stroke-width="3" stroke-linecap="round"/><rect x="26" y="44" width="92" height="46" rx="9" fill="#4A6FA5"/><rect x="36" y="54" width="32" height="16" rx="3" fill="#DCE6F2"/><circle cx="84" cy="62" r="5" fill="#FCFDFE"/><circle cx="100" cy="62" r="5" fill="#9FB3CC"/><rect x="26" y="80" width="92" height="4" fill="#3E5F8A"/><g transform="rotate(-10 126 40)"><rect x="100" y="24" width="52" height="34" rx="3" fill="#FCFDFE" stroke="#3E5F8A" stroke-width="2.5"/><path d="M100 26 L126 44 L152 26" fill="none" stroke="#3E5F8A" stroke-width="2.5" stroke-linejoin="round"/><rect x="137" y="30" width="11" height="11" rx="1.5" fill="#E89A8E"/></g></svg></div><span class="num">2 · AUTOMATISIEREN</span><b>Eine Frankiermaschine</b><span class="small">Feste Regeln laufen ohne KI</span></div>
+          <div class="step"><div class="ill"><svg viewBox="0 0 160 100" width="150" height="94" aria-hidden="true"><ellipse cx="80" cy="93" rx="66" ry="5" fill="#DCE6F2"/><path d="M22 91 C22 73 50 73 50 91 Z" fill="#9FB3CC"/><circle cx="36" cy="62" r="9" fill="#F1D3BC"/><path d="M27 61 a9 9 0 0 1 18 0 Z" fill="#3B2F2A"/><path d="M61 91 C61 66 99 66 99 91 Z" fill="#4A6FA5"/><circle cx="80" cy="52" r="11" fill="#F1D3BC"/><path d="M69 51 a11 11 0 0 1 22 0 Z" fill="#7A5A44"/><path d="M103 91 C103 57 145 57 145 91 Z" fill="#3E5F8A"/><circle cx="124" cy="40" r="13" fill="#E2B79A"/><path d="M111 39 a13 13 0 0 1 26 0 Z" fill="#9AA3AD"/><path d="M134 72 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5 z" fill="#F6F7F9"/></svg></div><span class="num">3 · GEZIELT KI</span><b>Den passenden Platz im Team</b><span class="small">Das richtige Modell zum richtigen Preis</span></div>
+          <div class="step"><div class="ill"><svg viewBox="0 0 160 100" width="150" height="94" aria-hidden="true"><ellipse cx="80" cy="93" rx="64" ry="5" fill="#DCE6F2"/><rect x="28" y="12" width="60" height="76" rx="5" fill="#FCFDFE" stroke="#3E5F8A" stroke-width="2.5"/><rect x="38" y="24" width="30" height="5" rx="2.5" fill="#4A6FA5"/><rect x="38" y="35" width="40" height="4" rx="2" fill="#9FB3CC"/><rect x="38" y="44" width="36" height="4" rx="2" fill="#9FB3CC"/><rect x="38" y="53" width="40" height="4" rx="2" fill="#9FB3CC"/><path d="M40 75 c6 -8 10 6 16 -2 s8 4 14 -3" stroke="#4A6FA5" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M104 52 v-12 a15 15 0 0 1 30 0 v12" stroke="#3E5F8A" stroke-width="6" fill="none"/><rect x="96" y="50" width="46" height="38" rx="7" fill="#4A6FA5"/><circle cx="119" cy="65" r="5" fill="#FCFDFE"/><rect x="117" y="66" width="4" height="10" rx="2" fill="#FCFDFE"/></svg></div><span class="num">4 · ABSICHERN</span><b>Vertrag und Schlüssel</b><span class="small">Verschwiegenheit und klare Regeln</span></div>
+        </div>
+      </div>
+
+      <div class="topic">
+        <h3>1 · Der Schreibtisch: KI arbeitet nur mit dem, was digital vorliegt</h3>
+        <div class="grid g3">
+          <div class="card"><b>Liegt es digital vor?</b><p class="small">Nicht nur auf Papier oder im Kopf des Meisters.</p></div>
+          <div class="card"><b>Findet man es?</b><p class="small">Eine klare Ablage statt Suche in fünf Ordnern.</p></div>
+          <div class="card"><b>Welche Version gilt?</b><p class="small">Eine Preisliste, nicht fünf. Und klar, wer zugreifen darf.</p></div>
+        </div>
+        <p>Digitalisierung lohnt sich auch ohne KI: schnellere Suche, einfache Vertretung, mobiles Arbeiten.</p>
+      </div>
+
+      <div class="topic">
+        <h3>2 · Die Frankiermaschine: Sie stellen keinen Ingenieur ein, um Briefmarken zu kleben</h3>
+        <div class="grid g2">
+          <div class="card"><span class="pill">Automatisierung</span><p style="margin-top:8px"><b>Feste Regel, gleiches Format.</b> Excel-Formel, Workflow oder kleines Skript. Einmal bauen, danach fast kostenlos. Tipp: Die KI kann das Skript schreiben.</p></div>
+          <div class="card tint"><span class="pill ki">KI</span><p style="margin-top:8px"><b>Sprache, Ermessen, Unordnung.</b> Freitext und wechselnde Formate zusammenfassen, formulieren, einordnen. Kosten pro Vorgang.</p></div>
+        </div>
+        <p><b>Beispiel Rechnungseingang:</b> PDF ablegen (Automatisierung) → Daten auslesen (KI) → Kostenstelle zuordnen (Automatisierung) → Rückfragen klären (Mensch). Und: Rechnen macht Code, nicht das Sprachmodell.</p>
+      </div>
+
+      <div class="topic">
+        <h3>3 · Das richtige Team: nicht jede Aufgabe braucht den Experten</h3>
+        <div class="grid g3">
+          <div class="card"><span class="pill">Einfaches Modell</span><p style="margin-top:8px"><b>Der Azubi.</b> Routine in Menge: Mails sortieren, Formulare auslesen. Cent-Beträge im Monat.</p></div>
+          <div class="card"><span class="pill">Mittleres Modell</span><p style="margin-top:8px"><b>Der Sachbearbeiter.</b> Entwürfe, Zusammenfassungen, Analysen. Wenige Euro im Monat.</p></div>
+          <div class="card"><span class="pill ki">High-End-Modell</span><p style="margin-top:8px"><b>Der Senior-Experte.</b> Seltene, knifflige Fälle, immer mit Gegenlesen. Höchster Preis pro Vorgang.</p></div>
+        </div>
+        <div class="grid g3">
+          <div class="card tint"><b>Festangestellt</b><p class="small">Open Source, selbst betrieben. Daten bleiben im Haus, Hardware und Betreuung zahlen Sie.</p></div>
+          <div class="card tint"><b>Freelancer</b><p class="small">Cloud-Modell nach Verbrauch. Sofort verfügbar, Abrechnung pro Vorgang.</p></div>
+          <div class="card tint"><b>Flatrate</b><p class="small">Abo pro Arbeitsplatz für Menschen, die selbst mit KI arbeiten.</p></div>
+        </div>
+      </div>
+
+      <div class="topic">
+        <h3>4 · Die vertrauenswürdige Kollegin: Datensicherheit</h3>
+        <div class="grid g2">
+          <div class="card"><span class="pill">Empfohlen</span><p style="margin-top:8px"><b>Business-Konto mit Vertrag.</b> Große Anbieter nutzen Daten aus Business-Versionen laut eigenen Angaben standardmäßig nicht zum Training. Auftragsverarbeitungsvertrag möglich.</p></div>
+          <div class="card tint"><span class="pill warn">Vorsicht</span><p style="margin-top:8px"><b>Privates Gratis-Konto.</b> Eingaben dürfen je nach Anbieter zur Verbesserung genutzt werden. Kein Vertrag, keine Kontrolle. Für Firmendaten tabu.</p></div>
+        </div>
+        <div class="card tbl">
+          <table class="pairs">
+            <thead><tr><th>Baustein</th><th>Bei einem neuen Mitarbeiter</th><th>Bei der KI-Kollegin</th></tr></thead>
+            <tbody>
+              <tr><td>Vertrag</td><td>Arbeitsvertrag mit Geheimhaltung</td><td>Business-Konto mit Auftragsverarbeitungsvertrag</td></tr>
+              <tr><td>Zugangskarte</td><td>Nur die nötigen Räume</td><td>Berechtigungen prüfen, bevor die KI ans Laufwerk darf</td></tr>
+              <tr><td>Arbeitsanweisung</td><td>Was darf raus, was nicht</td><td>KI-Richtlinie mit Daten-Ampel</td></tr>
+              <tr><td>Einarbeitung</td><td>Unterweisung am ersten Tag</td><td>Kurze Schulung für alle Nutzer</td></tr>
+              <tr><td>Probezeit</td><td>Arbeit wird gegengelesen</td><td>Klein anfangen, Ergebnisse prüfen</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid g3">
+          <div class="card amp ag"><b><span class="dot g"></span>Grün: öffentlich</b><ul class="list"><li>Website-Texte</li><li>Produktbeschreibungen</li><li>Pressemitteilungen</li></ul><p class="where">Jedes freigegebene Tool</p></div>
+          <div class="card amp ay"><b><span class="dot y"></span>Gelb: intern</b><ul class="list"><li>Angebote</li><li>Protokolle</li><li>Interne Abläufe</li></ul><p class="where">Nur Business-Konten mit Vertrag</p></div>
+          <div class="card amp ar"><b><span class="dot r"></span>Rot: vertraulich</b><ul class="list"><li>Kunden- und Personaldaten</li><li>Kalkulation</li><li>Konstruktionszeichnungen</li></ul><p class="where">Nur freigegebene Lösung mit Vertrag, Hochsensibles lokal oder gar nicht</p></div>
+        </div>
+        <p class="small">KI-Kompetenz nach Art. 4 EU AI Act: Schulung der Mitarbeitenden ist Pflicht, ein bestimmtes Niveau ist seit Juli 2026 nicht mehr vorgeschrieben. Keine Rechtsberatung.</p>
+      </div>
+
+      <div class="topic">
+        <h3>Der Weg jeder Aufgabe</h3>
+        <div class="card">
+          <ol class="road">
+            <li><b>Liegt es digital vor?</b> Wenn nein: erst digitalisieren.</li>
+            <li><b>Läuft es nach fester Regel?</b> Wenn ja: automatisieren, keine KI.</li>
+            <li><b>Dürfen die Daten in die Cloud?</b> Wenn nein: Open Source lokal oder EU-Hosting.</li>
+            <li><b>Routine in großer Menge?</b> Wenn ja: einfaches Modell. Sonst: mittleres Modell, schwierige Fälle zum Experten.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aufgabe -->
+  <section class="block" id="aufgabe">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Ihre Aufgabe</p>
+        <h2>Kurzer Check: Digitalisierung und KI</h2>
+        <p class="lead">Fünf Fragen aus dem Betriebsalltag. Tippen Sie auf eine Antwort, die Auflösung erscheint sofort.</p>
+      </div>
+      <div class="quiz" id="quiz"></div>
+      <p class="score" id="score" style="margin-top:14px"></p>
+      <div class="card tint" style="margin-top:22px">
+        <h3>Und für nächste Woche</h3>
+        <ol class="road" style="margin-top:10px">
+          <li>Eine Woche lang Zeitfresser notieren: Aufgabe, Häufigkeit, Dauer. Am einfachsten oben in <a href="#zeitfresser">Werkzeug 1</a>.</li>
+          <li>Jede Aufgabe durch die vier Fragen schicken.</li>
+          <li>Klein anfangen: ein Abo-Tool für Textarbeit, eine Automatisierung für eine Regelaufgabe.</li>
+          <li>Spielregeln festlegen: Business-Konten, Daten-Ampel, kurze Schulung für alle.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="block alt" id="kontakt">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Fragen oder ein konkreter Fall?</h2>
+        <p class="lead">Schreiben Sie mir kurz, worum es geht. Gern schaue ich mir Ihre Zeitfresser-Liste gemeinsam mit Ihnen an.</p>
+      </div>
+      <div class="contact">
+        <form class="card form" id="contactForm">
+          <div class="grid g2">
+            <div class="field"><label for="kName">Name</label><input type="text" id="kName" required maxlength="100"></div>
+            <div class="field"><label for="kFirma">Unternehmen</label><input type="text" id="kFirma" maxlength="120"></div>
+          </div>
+          <div class="field"><label for="kMail">E-Mail</label><input type="email" id="kMail" required maxlength="160"></div>
+          <div class="field"><label for="kMsg">Nachricht</label><textarea id="kMsg" rows="6" required maxlength="5000"></textarea></div>
+          <label class="check"><input type="checkbox" id="kList"> Meine Zeitfresser-Liste anhängen</label>
+          <label class="check"><input type="checkbox" id="kOk" required> Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden.</label>
+          <div class="btns"><button class="btn primary" type="submit">Nachricht senden</button></div>
+          <p class="msg" id="kMsgBox" role="status"></p>
+        </form>
+        <div class="card">
+          <h3>Gustav Bieberstein</h3>
+          <p class="small" style="margin-top:4px">Prozessberater für die Fertigung · Beratung zu KI-Lösungen</p>
+          <div class="btns" style="margin-top:14px"><a class="btn primary" href="tel:+491633645639">Anrufen: +49 163 3645639</a></div>
+          <p style="margin-top:12px" id="mailLine"></p>
+          <p class="small" style="margin-top:12px">Mein Motto: Erst den Prozess von Ende zu Ende verstehen. Dann verbessern, automatisieren oder neu denken.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap grid g2">
+    <div>
+      <h3>Impressum</h3>
+      <p>Gustav Bieberstein<br>Telefon: <a href="tel:+491633645639">+49 163 3645639</a><br>E-Mail: <span class="mail-text"></span></p>
+    </div>
+    <div>
+      <h3>Datenschutz</h3>
+      <p>Diese Seite setzt keine Cookies, nutzt kein Tracking und lädt keine externen Schriften. Ihre Zeitfresser-Liste wird nur lokal in Ihrem Browser gespeichert. Angaben aus dem Kontaktformular werden nur zur Beantwortung Ihrer Anfrage verwendet. Gehostet bei GitHub Pages (GitHub Inc.); dabei verarbeitet GitHub technisch notwendige Zugriffsdaten wie die IP-Adresse.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const CONFIG = { email: 'gustav.bieberstein@gmail.com', web3formsKey: '' };
+
+  /* ---------- Hilfen ---------- */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+  };
+  const nf1 = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 });
+  const nf0 = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 0 });
+  const nf2 = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  /* ---------- Zeitfresser ---------- */
+  const RECO = {
+    wait: { t: 'Noch offen', x: 'Beantworten Sie die Fragen von oben nach unten.' },
+    digital: { t: 'Erst digitalisieren', x: 'Die Kollegin braucht einen Schreibtisch: erfassen, ablegen, auffindbar machen.' },
+    auto: { t: 'Automatisieren, keine KI', x: 'Feste Regel: Skript oder Workflow. Läuft danach fast kostenlos.' },
+    lokal: { t: 'Open Source lokal oder EU-Hosting', x: 'Die Daten bleiben im Haus oder in Europa, mit Vertrag.' },
+    klein: { t: 'Einfaches KI-Modell', x: 'Der Azubi: Routine in großer Menge für Cent-Beträge.' },
+    mittel: { t: 'Mittleres KI-Modell', x: 'Der Sachbearbeiter. Schwierige Fälle gehen zum Experten, immer mit Gegenlesen.' }
+  };
+  let ans = [null, null, null, null];
+  function decide(a) {
+    if (a[0] === false) return { r: 'digital', last: 0 };
+    if (a[0] !== true) return { r: 'wait', last: 0 };
+    if (a[1] === true) return { r: 'auto', last: 1 };
+    if (a[1] !== false) return { r: 'wait', last: 1 };
+    if (a[2] === false) return { r: 'lokal', last: 2 };
+    if (a[2] !== true) return { r: 'wait', last: 2 };
+    if (a[3] === true) return { r: 'klein', last: 3 };
+    if (a[3] === false) return { r: 'mittel', last: 3 };
+    return { r: 'wait', last: 3 };
+  }
+  function renderQs() {
+    const d = decide(ans);
+    $$('.yn').forEach(row => {
+      const q = Number(row.dataset.q);
+      row.classList.toggle('off', q > d.last);
+      $$('.btn', row).forEach(b => { b.classList.toggle('on', q <= d.last && ans[q] === (b.dataset.v === '1')); b.disabled = q > d.last; });
+    });
+    const r = RECO[d.r];
+    const box = $('#tfReco'); box.textContent = '';
+    const b = document.createElement('b'); b.textContent = 'Empfehlung: ' + r.t + '. ';
+    box.append(b, r.x);
+    return d.r;
+  }
+  $$('.yn .btn').forEach(b => b.addEventListener('click', () => {
+    const q = Number(b.closest('.yn').dataset.q);
+    ans[q] = b.dataset.v === '1';
+    for (let j = q + 1; j < 4; j++) ans[j] = null;
+    renderQs();
+  }));
+  renderQs();
+
+  let items = store.get('kk-zeitfresser', []);
+  const perMonth = { day: 21.7, week: 4.33, month: 1 };
+  const perLabel = { day: 'Tag', week: 'Woche', month: 'Monat' };
+  function hours(it) { return it.freq * perMonth[it.per] * it.min / 60; }
+  function renderList() {
+    const list = $('#tfList'); list.textContent = '';
+    if (!items.length) {
+      const e = document.createElement('div'); e.className = 'empty';
+      e.innerHTML = 'Noch keine Einträge. Links eine Aufgabe erfassen oder <button class="btn" type="button" id="tfDemo" style="margin-top:8px">ein Beispiel laden</button>';
+      list.appendChild(e);
+      $('#tfDemo').addEventListener('click', () => {
+        items = [
+          { name: 'Lieferscheine abtippen', freq: 10, per: 'day', min: 4, r: 'auto' },
+          { name: 'Kundenanfragen per Mail sortieren', freq: 60, per: 'day', min: 1, r: 'klein' },
+          { name: 'Angebote aus alten Angeboten zusammensuchen', freq: 6, per: 'week', min: 45, r: 'mittel' },
+          { name: 'Prüfprotokolle aus Papierordnern suchen', freq: 3, per: 'week', min: 20, r: 'digital' }
+        ];
+        save(); renderList();
+      });
+    }
+    items.forEach((it, i) => {
+      const d = document.createElement('div'); d.className = 'tf c-' + it.r;
+      const left = document.createElement('div');
+      const h = document.createElement('h3'); h.textContent = it.name;
+      const p = document.createElement('p'); p.className = 'small';
+      p.textContent = it.freq + '× pro ' + perLabel[it.per] + ', je ' + it.min + ' Min. · ca. ' + nf1.format(hours(it)) + ' Std. im Monat';
+      const pill = document.createElement('span'); pill.className = 'pill' + (it.r === 'klein' || it.r === 'mittel' ? ' ki' : ''); pill.textContent = RECO[it.r].t; pill.style.marginTop = '6px';
+      left.append(h, p, pill);
+      const del = document.createElement('button'); del.className = 'del'; del.type = 'button'; del.textContent = 'Entfernen';
+      del.addEventListener('click', () => { items.splice(i, 1); save(); renderList(); });
+      d.append(left, del); list.appendChild(d);
+    });
+    const total = items.reduce((s, it) => s + hours(it), 0);
+    const ki = items.filter(it => it.r === 'klein' || it.r === 'mittel').length;
+    const auto = items.filter(it => it.r === 'auto').length;
+    $('#tfSum').innerHTML = '<div><b>' + nf1.format(total) + '</b><span class="small">Stunden im Monat</span></div><div><b>' + auto + '</b><span class="small">zum Automatisieren</span></div><div><b>' + ki + '</b><span class="small">für KI geeignet</span></div>';
+  }
+  function save() { if (!store.set('kk-zeitfresser', items)) $('#tfNote').textContent = 'Hinweis: Ihr Browser speichert die Liste nicht dauerhaft. Kopieren Sie sie vor dem Schließen.'; }
+  $('#tfForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#tfName').value.trim();
+    const r = decide(ans).r;
+    if (!name) return;
+    if (r === 'wait') { $('#tfReco').scrollIntoView({ block: 'center' }); return; }
+    items.push({ name, freq: Math.max(1, Number($('#tfFreq').value) || 1), per: $('#tfPer').value, min: Math.max(1, Number($('#tfMin').value) || 1), r });
+    save(); renderList();
+    $('#tfName').value = ''; ans = [null, null, null, null]; renderQs(); $('#tfName').focus();
+  });
+  function listText() {
+    return items.map((it, i) => (i + 1) + '. ' + it.name + ' (' + it.freq + '× pro ' + perLabel[it.per] + ', je ' + it.min + ' Min., ca. ' + nf1.format(hours(it)) + ' Std./Monat) → ' + RECO[it.r].t).join('\n');
+  }
+  $('#tfCopy').addEventListener('click', async () => {
+    if (!items.length) return;
+    try { await navigator.clipboard.writeText('Meine Zeitfresser\n' + listText()); $('#tfNote').textContent = 'Liste kopiert.'; }
+    catch (e) { $('#tfNote').textContent = 'Kopieren nicht möglich. Bitte die Liste markieren und kopieren.'; }
+  });
+  $('#tfCsv').addEventListener('click', () => {
+    if (!items.length) return;
+    const esc = v => '"' + String(v).replace(/"/g, '""') + '"';
+    const rows = [['Aufgabe', 'Wie oft', 'pro', 'Minuten je Mal', 'Stunden pro Monat', 'Empfehlung']].concat(items.map(it => [it.name, it.freq, perLabel[it.per], it.min, nf1.format(hours(it)), RECO[it.r].t]));
+    const blob = new Blob(['﻿' + rows.map(r => r.map(esc).join(';')).join('\r\n')], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'zeitfresser.csv'; document.body.appendChild(a); a.click(); a.remove();
+  });
+  $('#tfSend').addEventListener('click', () => {
+    $('#kList').checked = true;
+    if (!$('#kMsg').value) $('#kMsg').value = 'Hallo Gustav, anbei meine Zeitfresser aus Ihrem Vortrag. Können wir kurz darüber sprechen?';
+    location.hash = 'kontakt'; $('#kName').focus();
+  });
+  $('#tfClear').addEventListener('click', () => { if (items.length) { items = []; save(); renderList(); } });
+  renderList();
+
+  /* ---------- Kosten ---------- */
+  const EURUSD = 1.15;
+  const tiers = [
+    { n: 'Einfaches Modell', s: 'Azubi', i: 0.10, o: 0.50 },
+    { n: 'Mittleres Modell', s: 'Sachbearbeiter', i: 2.00, o: 10.00 },
+    { n: 'High-End-Modell', s: 'Senior-Experte', i: 8.00, o: 40.00 }
+  ];
+  const presets = {
+    mail: { N: 2000, I: 1500, O: 100, t: 'E-Mails vorsortieren', note: '2.000 Mails im Monat, je ca. 1.500 Tokens rein, raus nur eine Kategorie.' },
+    invoice: { N: 1500, I: 2500, O: 300, t: 'Rechnungen auslesen', note: '1.500 Rechnungen, Text je ca. 2.500 Tokens, raus die wichtigsten Felder.' },
+    minutes: { N: 40, I: 12000, O: 1000, t: 'Protokolle zusammenfassen', note: '40 Besprechungen à 1 Stunde, Abschrift ca. 12.000 Tokens, Zusammenfassung ca. 1.000.' },
+    service: { N: 3000, I: 4000, O: 300, t: 'Kundenanfragen beantworten', note: '3.000 Anfragen, je ca. 4.000 Tokens inklusive Auszug aus der Wissensbasis, Antwortentwurf ca. 300.' },
+    offer: { N: 200, I: 30000, O: 3000, t: 'Angebote entwerfen', note: '200 Angebote, Anfrage, Preisliste und alte Angebote ca. 30.000 Tokens, Entwurf ca. 3.000.' },
+    agent: { N: 100, I: 2500000, O: 20000, t: 'KI-Agent arbeitet selbstständig', note: '100 Aufgaben à 50 Arbeitsschritte, jeder Schritt liest 50.000 Tokens Kontext. Das treibt die Kosten.' }
+  };
+  const R = { N: [10, 20000], I: [100, 3000000], O: [50, 50000] };
+  const toS = (v, r) => Math.round(Math.log(v / r[0]) / Math.log(r[1] / r[0]) * 1000);
+  const fromS = (s, r) => { const v = r[0] * Math.pow(r[1] / r[0], s / 1000); const p = Math.pow(10, Math.max(0, Math.floor(Math.log10(v)) - 1)); return Math.round(v / p) * p; };
+  function money(usd) {
+    const v = usd / EURUSD;
+    if (v < 0.995) { const ct = Math.round(v * 100); return ct < 1 ? 'unter 1 Cent' : ct + ' Cent'; }
+    if (v < 100) return nf2.format(v) + ' €';
+    return nf0.format(v) + ' €';
+  }
+  const bars = $('#bars');
+  tiers.forEach((t, j) => {
+    const row = document.createElement('div'); row.className = 'bar-row';
+    row.innerHTML = '<div class="nm"></div><div class="track"><div class="fill' + (j === 2 ? ' big' : '') + '"></div></div><div class="val"></div>';
+    const nm = row.querySelector('.nm'); nm.textContent = t.n; const sp = document.createElement('span'); sp.textContent = t.s; nm.appendChild(sp);
+    bars.appendChild(row);
+  });
+  function calc(p) {
+    const N = p ? p.N : fromS(Number($('#cN').value), R.N);
+    const I = p ? p.I : fromS(Number($('#cI').value), R.I);
+    const O = p ? p.O : fromS(Number($('#cO').value), R.O);
+    $('#vN').textContent = nf0.format(N); $('#vI').textContent = nf0.format(I); $('#vO').textContent = nf0.format(O);
+    const vals = tiers.map(t => N * (I * t.i + O * t.o) / 1e6);
+    const max = Math.max.apply(null, vals) || 1;
+    $$('.bar-row', bars).forEach((row, j) => { row.querySelector('.fill').style.width = (vals[j] / max * 100) + '%'; row.querySelector('.val').textContent = money(vals[j]); });
+    $('#total').innerHTML = 'Im Monat: <b>' + money(vals[0]) + '</b> mit dem Azubi bis <b>' + money(vals[2]) + '</b> mit dem Senior-Experten.';
+  }
+  function setPreset(k) {
+    const p = presets[k];
+    $('#cN').value = toS(p.N, R.N); $('#cI').value = toS(p.I, R.I); $('#cO').value = toS(p.O, R.O);
+    $('#scTitle').textContent = p.t; $('#scNote').textContent = p.note;
+    $$('[data-preset]').forEach(b => b.classList.toggle('on', b.dataset.preset === k));
+    calc(p);
+  }
+  $$('[data-preset]').forEach(b => b.addEventListener('click', () => setPreset(b.dataset.preset)));
+  ['#cN', '#cI', '#cO'].forEach(id => $(id).addEventListener('input', () => {
+    $$('[data-preset]').forEach(b => b.classList.remove('on'));
+    $('#scTitle').textContent = 'Eigene Werte'; $('#scNote').textContent = 'Mit den Reglern eingestellt.';
+    calc();
+  }));
+  setPreset('mail');
+
+  /* ---------- Aufgabe: Quiz ---------- */
+  const QUIZ = [
+    { q: 'Ihre alten Angebote stehen als Ordner im Regal. Sie möchten, dass KI beim nächsten Angebot hilft. Was ist der erste Schritt?', o: ['Ein KI-Abo für alle kaufen', 'Die Angebote digitalisieren: scannen und sauber ablegen', 'Abwarten, bis KI Papier lesen kann'], a: 1, x: 'Die Kollegin braucht einen Schreibtisch. Ohne digitale Unterlagen hat sie nichts, womit sie arbeiten kann.' },
+    { q: 'Jede eingehende Rechnung soll als PDF im richtigen Ordner landen. Was passt?', o: ['Automatisierung, also eine feste Regel', 'Ein High-End-KI-Modell', 'Eine Aushilfe, die das täglich macht'], a: 0, x: 'Feste Regel, immer gleiches Format: Das erledigt eine Automatisierung, einmal gebaut und danach fast kostenlos.' },
+    { q: '2.000 Kundenmails im Monat sollen in Kategorien sortiert werden. Welche KI-Klasse genügt?', o: ['High-End-Modell, sicher ist sicher', 'Einfaches Modell, der Azubi', 'Gar keine, das geht nur von Hand'], a: 1, x: 'Routine in großer Menge schafft das einfache Modell für wenige Cent im Monat. Das High-End-Modell wäre etwa 80-mal so teuer, ohne besser zu sortieren.' },
+    { q: 'Darf die Gehaltsliste in ein privates Gratis-KI-Konto?', o: ['Ja, wenn es schnell gehen muss', 'Ja, wenn man die Namen abkürzt', 'Nein: Personaldaten sind Rot auf der Daten-Ampel'], a: 2, x: 'Personaldaten sind vertraulich. Sie gehören höchstens in eine freigegebene Lösung mit Vertrag, Hochsensibles lokal oder gar nicht.' },
+    { q: 'Was treibt die KI-Kosten am stärksten nach oben?', o: ['Wie viel Text bei jedem Arbeitsschritt mitgelesen wird', 'Die Uhrzeit, zu der man KI nutzt', 'Die Zahl der Mitarbeitenden im Betrieb'], a: 0, x: 'Abgerechnet wird pro gelesenem und geschriebenem Text. Ein Agent, der bei jedem Schritt viele Unterlagen liest, wird schnell teuer.' }
+  ];
+  let points = 0, answered = 0;
+  const quiz = $('#quiz');
+  QUIZ.forEach((item, qi) => {
+    const box = document.createElement('div'); box.className = 'qz';
+    const h = document.createElement('h3'); h.textContent = (qi + 1) + '. ' + item.q;
+    const opts = document.createElement('div'); opts.className = 'opts';
+    const fb = document.createElement('p'); fb.className = 'fb';
+    item.o.forEach((txt, oi) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.textContent = txt;
+      b.addEventListener('click', () => {
+        if (box.dataset.done) return;
+        box.dataset.done = '1'; answered++;
+        const ok = oi === item.a; if (ok) points++;
+        box.classList.add(ok ? 'ok' : 'no');
+        $$('.opt', opts).forEach((x, xi) => { x.disabled = true; if (xi === item.a) x.classList.add('right'); else if (xi === oi) x.classList.add('wrong'); });
+        fb.textContent = ''; const v = document.createElement('b'); v.textContent = ok ? 'Richtig! ' : 'Nicht ganz. '; fb.append(v, item.x);
+        $('#score').textContent = answered === QUIZ.length ? 'Ergebnis: ' + points + ' von ' + QUIZ.length + ' richtig.' : points + ' von ' + answered + ' bisher richtig.';
+      });
+      opts.appendChild(b);
+    });
+    box.append(h, opts, fb); quiz.appendChild(box);
+  });
+
+  /* ---------- Kontakt ---------- */
+  const mailOk = /@/.test(CONFIG.email);
+  $$('.mail-text').forEach(el => el.textContent = mailOk ? CONFIG.email : '[E-Mail-Adresse]');
+  const ml = $('#mailLine');
+  if (mailOk) { const a = document.createElement('a'); a.href = 'mailto:' + CONFIG.email; a.textContent = CONFIG.email; ml.append('E-Mail: ', a); }
+  function show(t, ok) { const m = $('#kMsgBox'); m.textContent = t; m.className = 'msg show ' + (ok ? 'ok' : 'err'); }
+  $('#contactForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = $('#kName').value.trim(), firma = $('#kFirma').value.trim(), mail = $('#kMail').value.trim(), msg = $('#kMsg').value.trim();
+    let text = msg;
+    if ($('#kList').checked && items.length) text += '\n\nMeine Zeitfresser:\n' + listText();
+    const subject = 'Anfrage nach dem KI-Vortrag' + (firma ? ' · ' + firma : '');
+    if (CONFIG.web3formsKey && !CONFIG.web3formsKey.startsWith('{{')) {
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ access_key: CONFIG.web3formsKey, subject, from_name: name, name, email: mail, unternehmen: firma, message: text }) });
+        const j = await res.json();
+        if (j.success) { show('Danke, Ihre Nachricht ist angekommen. Ich melde mich zeitnah.', true); e.target.reset(); return; }
+        throw new Error(j.message || 'Fehler');
+      } catch (err) {
+        show('Das Senden hat nicht geklappt. Bitte schreiben Sie direkt an ' + (mailOk ? CONFIG.email : 'die E-Mail-Adresse im Impressum') + '.', false); return;
+      }
+    }
+    if (!mailOk) { show('Das Kontaktformular ist noch nicht eingerichtet.', false); return; }
+    const body = text + '\n\n' + name + (firma ? '\n' + firma : '') + '\n' + mail;
+    location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    show('Ihr E-Mail-Programm öffnet sich mit der vorbereiteten Nachricht. Falls nicht: Schreiben Sie bitte an ' + CONFIG.email + '.', true);
+  });
+})();
+</script>
+</body>
+</html>
